@@ -1,4 +1,12 @@
 /* CSS code for modern and intuitive form elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: black;
+}
 
 /* Form */
 
