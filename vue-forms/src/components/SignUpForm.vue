@@ -2,18 +2,34 @@
     <form>
         <div class="info email">
             <label for="email">Email</label>
-            <input type="email" required />
+            <input type="email" required v-model="email" />
         </div>
         <div class="info password">
             <label for="password">Password</label>
-            <input type="password" required />
+            <input type="password" required v-model="password" />
         </div>
+        <div class="role"><label for="role">Role:</label>
+            <select name="role" v-model="role">
+                <option value="Developer">Web Developer</option>
+                <option value="Designer">Web Designer</option>
+                <option value="Project manager">Project manager</option>
+                <option value="UX Researcher">UX Researcher</option>
+            </select>
+        </div>
+        <p>role is : {{ role }}</p>
     </form>
 </template>
 
 <script>
 export default {
     name: "SignUpForm",
+    data() {
+        return {
+            email: '',
+            password: '',
+            role: ''
+        }
+    }
 };
 
 </script>
@@ -33,7 +49,8 @@ form {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.info {
+.info,
+.role {
     margin: 1rem;
 }
 
